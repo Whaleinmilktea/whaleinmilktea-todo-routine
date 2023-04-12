@@ -1,7 +1,7 @@
-import styled from "styled-components";
-import { useState } from "react";
-import { useDispatch, useSelector } from "react-redux";
-import { updateTodo, deleteTodo } from "../reducer/Controller";
+import styled from 'styled-components';
+import { useState } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { updateTodo, deleteTodo } from '../reducer/Controller';
 
 const TodoListWrapper = styled.div`
   display: flex;
@@ -65,7 +65,7 @@ const Check = styled.input`
   }
 
   &:after {
-    content: "";
+    content: '';
     position: absolute;
     display: none;
   }
@@ -139,9 +139,9 @@ const TodoList = () => {
 
 const TodoListItem = ({ todo, dispatch }) => {
   const [editMode, setEditMode] = useState(false);
-  const [editedTitle, setEditedTitle] = useState("");
-  const [editedDate, setEditedDate] = useState("");
-  const [editedTime, setEditedTime] = useState("");
+  const [editedTitle, setEditedTitle] = useState('');
+  const [editedDate, setEditedDate] = useState('');
+  const [editedTime, setEditedTime] = useState('');
   const [checked, setChecked] = useState(false);
 
   const handleEdit = () => {
@@ -212,7 +212,7 @@ const TodoListItem = ({ todo, dispatch }) => {
           )}
         </Time>
         <EditBtn onClick={editMode ? handleUpdate : handleEdit}>
-          {editMode ? "Save" : "Edit"}
+          {editMode ? 'Save' : 'Edit'}
         </EditBtn>
         <DeleteBtn onClick={handleDelete}>Delete</DeleteBtn>
       </ContentWrapper>

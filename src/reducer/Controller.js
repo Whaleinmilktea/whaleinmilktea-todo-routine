@@ -1,28 +1,28 @@
-import { createSlice } from "@reduxjs/toolkit";
-import { v4 as uuidv4 } from "uuid";
+import { createSlice } from '@reduxjs/toolkit';
+import { v4 as uuidv4 } from 'uuid';
 
 const initialState = {
   routines: [
     {
       id: uuidv4(),
-      title: "프로그래머스 코딩테스트 2제",
-      time: "07:00",
+      title: '프로그래머스 코딩테스트 2제',
+      time: '07:00',
       check: false,
     },
   ],
   todos: [
     {
       id: uuidv4(),
-      title: "프로그래머스 코딩테스트 2제",
-      date: "2023-04-08",
-      time: "07:00",
+      title: '프로그래머스 코딩테스트 2제',
+      date: '2023-04-08',
+      time: '07:00',
       check: false,
     },
   ],
 };
 
 const addSlice = createSlice({
-  name: "add",
+  name: 'add',
   initialState,
   reducers: {
     addRoutine: (state, action) => {

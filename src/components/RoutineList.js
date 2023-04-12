@@ -1,7 +1,7 @@
-import styled from "styled-components";
-import { useSelector, useDispatch } from "react-redux";
-import { updateRoutine, deleteRoutine } from "../reducer/Controller";
-import { useState } from "react";
+import styled from 'styled-components';
+import { useSelector, useDispatch } from 'react-redux';
+import { updateRoutine, deleteRoutine } from '../reducer/Controller';
+import { useState } from 'react';
 
 const RoutineListWrapper = styled.div`
   display: flex;
@@ -11,7 +11,7 @@ const RoutineListWrapper = styled.div`
   box-shadow: 0 0 4px rgba(0, 0, 0, 0.1);
   margin-bottom: 10px;
   padding: 10px;
-  `;
+`;
 
 const ContentWrapper = styled.div`
   width: 100%;
@@ -36,7 +36,7 @@ const Time = styled.div`
 `;
 
 const Check = styled.input`
-all: unset;
+  all: unset;
   float: right;
   margin-left: 5px;
   width: 20px;
@@ -52,7 +52,7 @@ all: unset;
   }
 
   &:after {
-    content: "";
+    content: '';
     position: absolute;
     display: none;
   }
@@ -68,7 +68,7 @@ all: unset;
 `;
 
 const EditBtn = styled.button`
-margin-top: 10px;
+  margin-top: 10px;
   color: #444444;
   background: #ffffff;
   border: 1px #dadada solid;
@@ -129,8 +129,8 @@ const RoutineList = () => {
 
 const RoutineListItem = ({ routine, dispatch }) => {
   const [editMode, setEditMode] = useState(false);
-  const [editedTitle, setEditedTitle] = useState("");
-  const [editedTime, setEditedTime] = useState("");
+  const [editedTitle, setEditedTitle] = useState('');
+  const [editedTime, setEditedTime] = useState('');
   const [checked, setChecked] = useState(false);
 
   const handleEdit = () => {
@@ -182,7 +182,7 @@ const RoutineListItem = ({ routine, dispatch }) => {
             )}
           </Time>
           <EditBtn onClick={editMode ? handleUpdate : handleEdit}>
-            {editMode ? "Update" : "Edit"}
+            {editMode ? 'Update' : 'Edit'}
           </EditBtn>
           <DeleteBtn onClick={handleDelete}>Delete</DeleteBtn>
         </ContentWrapper>

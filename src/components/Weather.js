@@ -1,7 +1,7 @@
-import styled from "styled-components";
-import axios from "axios";
-import { useState, useEffect } from "react";
-import wDescEngToKor from "../data/wDescEngToKor";
+import styled from 'styled-components';
+import axios from 'axios';
+import { useState, useEffect } from 'react';
+import wDescEngToKor from '../data/wDescEngToKor';
 
 const WeatherWrapper = styled.div`
   display: flex;
@@ -62,8 +62,8 @@ const WeatherDetail = styled.div`
 `;
 
 const Weather = () => {
-  const [selectCity, setSelectCity] = useState("");
-  const [searchCity, setSearchCity] = useState("seoul");
+  const [selectCity, setSelectCity] = useState('');
+  const [searchCity, setSearchCity] = useState('seoul');
   const [weatherData, setWeatherData] = useState({});
 
   function convertKelvinToCelsius(temp) {
@@ -75,7 +75,7 @@ const Weather = () => {
 
   // * 비동기적으로 날씨데이터를 가져오는 함수
   useEffect(() => {
-    if (searchCity === "") {
+    if (searchCity === '') {
       return;
     }
     const fetchWeatherData = async () => {
@@ -99,7 +99,7 @@ const Weather = () => {
         console.log(convertedData);
       } catch (err) {
         console.log(err);
-        alert("예기치 못한 오류가 발생했습니다.");
+        alert('예기치 못한 오류가 발생했습니다.');
       }
     };
     fetchWeatherData();
@@ -113,7 +113,7 @@ const Weather = () => {
   // * form 태그의 submit 이벤트 핸들러 === 지역을 입력받아 api 요청을 보내는 함수
   function handleSelectCity(e) {
     e.preventDefault();
-    if (selectCity !== "") {
+    if (selectCity !== '') {
       setSearchCity(selectCity.toLowerCase());
     }
   }
@@ -121,7 +121,7 @@ const Weather = () => {
   // * input 태그의 change 이벤트 핸들러 === 지역을 입력받아 상태변경함수에 담아낼 함수
   function handleLocaleChange(e) {
     setSelectCity(e.target.value);
-    LocaleSearch.value = "";
+    LocaleSearch.value = '';
   }
 
   return (
@@ -140,9 +140,7 @@ const Weather = () => {
             Weather in {`${searchCity.toUpperCase()}`}
           </WeatherLocale>
           <WeatherDetailWrapper>
-          <WeatherDetail>
-              날씨 개요 : {`${weatherId}`}
-            </WeatherDetail>
+            <WeatherDetail>날씨 개요 : {`${weatherId}`}</WeatherDetail>
             <WeatherDetail>
               최고 기온 : {`${weatherData.main?.temp_max}`} ℃
             </WeatherDetail>
