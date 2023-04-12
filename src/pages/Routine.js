@@ -1,8 +1,7 @@
-import RoutineList from "../components/RoutineList";
-import styled from "styled-components";
-import { useState } from "react";
+import RoutineList from '../components/RoutineList';
+import styled from 'styled-components';
+import { useState } from 'react';
 import { AiOutlineEdit, AiOutlineCheckSquare } from 'react-icons/ai';
-
 
 const RoutineWrapper = styled.div``;
 
@@ -19,21 +18,21 @@ const RoutineGoalInput = styled.input`
 `;
 
 const RoutineEditButton = styled.button`
-  all : unset;
+  all: unset;
   position: absolute;
   top: 0;
   right: 0;
 `;
 
 const RoutineSaveButton = styled.button`
-  all : unset;
+  all: unset;
   position: absolute;
   top: 0;
   right: 0;
 `;
 const RoutinePage = () => {
   const [isEditing, setIsEditing] = useState(false);
-  const [goalInputValue, setGoalInputValue] = useState("");
+  const [goalInputValue, setGoalInputValue] = useState('');
 
   const handleEditClick = () => {
     setIsEditing(true);

@@ -1,8 +1,7 @@
-import TodoList from "../components/TodoList";
-import { useState, useEffect, useRef } from "react";
-import styled from "styled-components";
+import TodoList from '../components/TodoList';
+import { useState, useEffect, useRef } from 'react';
+import styled from 'styled-components';
 import { AiOutlineEdit, AiOutlineCheckSquare } from 'react-icons/ai';
-
 
 const TodoWrapper = styled.div``;
 
@@ -34,11 +33,12 @@ const TodoSaveButton = styled.button`
 
 const TodoPage = () => {
   const [isEditing, setIsEditing] = useState(false);
-  const [goalInputValue, setGoalInputValue] = useState("");
+  const [goalInputValue, setGoalInputValue] = useState('');
 
   const goalInputRef = useRef(null); // useRef()를 사용해서 Goal Input의 ref를 생성합니다.
 
-  useEffect(() => { // useEffect() hook을 사용해서 Goal Input의 값을 유지합니다.
+  useEffect(() => {
+    // useEffect() hook을 사용해서 Goal Input의 값을 유지합니다.
     if (goalInputRef.current && goalInputRef.current.value !== goalInputValue) {
       goalInputRef.current.value = goalInputValue;
     }
@@ -75,7 +75,6 @@ const TodoPage = () => {
               <AiOutlineCheckSquare />
             </TodoSaveButton>
           )}
-
         </TodoGoalInputWrapper>
         <TodoList />
       </TodoWrapper>
@@ -84,5 +83,3 @@ const TodoPage = () => {
 };
 
 export default TodoPage;
-
-

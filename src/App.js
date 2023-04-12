@@ -1,11 +1,11 @@
-import "./App.css";
-import styled from "styled-components";
-import Addform from "./components/Addform";
-import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
-import DashBoard from "./pages/Dashboard";
-import TodoPage from "./pages/Todo";
-import RoutinePage from "./pages/Routine";
-import Weather from "./pages/Weather";
+import './App.css';
+import styled from 'styled-components';
+import Addform from './components/Addform';
+import { BrowserRouter, Routes, Route, Link } from 'react-router-dom';
+import DashBoard from './pages/Dashboard';
+import TodoPage from './pages/Todo';
+import RoutinePage from './pages/Routine';
+import Weather from './pages/Weather';
 
 const AppWrapper = styled.div`
   width: 400px;

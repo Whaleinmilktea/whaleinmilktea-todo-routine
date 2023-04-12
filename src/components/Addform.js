@@ -1,13 +1,13 @@
-import { useState } from "react";
-import styled from "styled-components";
-import { addRoutine, addTodo } from "../reducer/Controller";
-import { useDispatch } from "react-redux";
+import { useState } from 'react';
+import styled from 'styled-components';
+import { addRoutine, addTodo } from '../reducer/Controller';
+import { useDispatch } from 'react-redux';
 
 const AddBtn = styled.button`
   width: 100%;
   height: 30px;
   border: 2px solid #000;
-  font-family: "Lato", sans-serif;
+  font-family: 'Lato', sans-serif;
   font-weight: 500;
   background: transparent;
   margin-bottom: 5px;
@@ -51,7 +51,7 @@ const Input = styled.input`
   background-color: #f0f0f0;
   /* padding: 0 5px; */
   /* margin-right: 5px; */
-  font-family: "Lato", sans-serif;
+  font-family: 'Lato', sans-serif;
   font-weight: 500;
   :disabled {
     background-color: #d0d0d0;
@@ -66,7 +66,7 @@ const InputDateTime = styled.input`
   background-color: #f0f0f0;
   /* padding: 0 5px; */
   /* margin-right: 5px; */
-  font-family: "Lato", sans-serif;
+  font-family: 'Lato', sans-serif;
   font-weight: 500;
   :disabled {
     background-color: #d0d0d0;
@@ -84,7 +84,7 @@ const InputWrapper = styled.div`
 const Label = styled.label`
   width: 100%;
   color: #000;
-  font-family: "Lato", sans-serif;
+  font-family: 'Lato', sans-serif;
   font-weight: 500;
   margin-right: 10px;
 `;
@@ -96,7 +96,7 @@ const SubmitBtn = styled.button`
   border: none;
   background-color: #000;
   color: #fff;
-  font-family: "Lato", sans-serif;
+  font-family: 'Lato', sans-serif;
   font-weight: 500;
   cursor: pointer;
   transition: all 0.3s ease;
@@ -116,9 +116,9 @@ const CloseBtn = styled.button`
 `;
 
 const AddForm = () => {
-  const [title, setTitle] = useState(""); // 입력한 내용
-  const [date, setDate] = useState(""); // 선택한 날짜
-  const [time, setTime] = useState(""); // 선택한 시간
+  const [title, setTitle] = useState(''); // 입력한 내용
+  const [date, setDate] = useState(''); // 선택한 날짜
+  const [time, setTime] = useState(''); // 선택한 시간
   const [routine, setRoutine] = useState(false); // 루틴 체크 여부 ==> 이에 따라 submit 시 store에 추가하는 데이터가 달라짐
   const [todo, setTodo] = useState(false); // 투두 체크 여부
   const [visible, setVisible] = useState(false); // 폼 보이기 여부
@@ -139,18 +139,18 @@ const AddForm = () => {
     // store에 데이터 추가 === todo와 routine을 구분해서 추가
     const handleRoutineSumit = () => {
       dispatch(addRoutine({ title, time }));
-      setTitle("");
-      setDate("");
-      setTime("");
+      setTitle('');
+      setDate('');
+      setTime('');
       setRoutine(false);
       setTodo(false);
     };
 
     const handleTodoSubmit = () => {
       dispatch(addTodo({ title, date, time }));
-      setTitle("");
-      setDate("");
-      setTime("");
+      setTitle('');
+      setDate('');
+      setTime('');
       setRoutine(false);
       setTodo(false);
     };
